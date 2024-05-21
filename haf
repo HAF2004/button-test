@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu</title>
+<!-- Import Inter font -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+<style>
+  /* bentuk tombol menu */
+  .menu-container {
+    position: fixed;
+    top: 20px;
+    left: 20px; /* Position on the left */
+    z-index: 9999;
+  }
+
+  .menu-toggle {
+    width: 20px;
+    height: 40px;
+    background-color: transparent; /* Transparent background */
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .menu-toggle div {
+    width: 30px;
+    height: 3px;
+    background-color: #007bff; /* Color for the stripes */
+  }
+
+  /* bentuk button */
+  .menu-items {
+    display: none;
+    position: absolute;
+    top: -10px; /* Adjusted top position to be above the toggle button */
+    left: 50px; /* Adjusted left position */
+    background-color: none;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2`);
+    font-family: 'Inter', sans-serif; /* Apply Inter font */
+    flex-direction: row; /* Changed to row to display buttons horizontally */
+    outline: 2px solid none; /* Added outline to the menu frame */
+  }
+
+  .menu-items.active {
+    display: flex; /* Changed display to flex */
+    align-items: center; /* Adjusted to center items vertically */
+  }
+
+  .menu-items button {
+    display: block;
+    padding: 8px 8px; /* Adjusted padding for better button appearance */
+    margin-left: 20px; /* Adjusted to add space between buttons */
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px; /* Added font-size property */
+  }
+
+  .menu-items button:first-child {
+    margin-left: 0; /* Remove left margin for the first button */
+  }
+
+  .menu-items button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+<div class="menu-container">
+  <button class="menu-toggle">
+    <div></div>
+    <div></div>
+    <div></div>
+  </button>
+  <div class="menu-items">
+    <button onclick="redirectTo('https://instan.click/haf')">Home</button>
+    <button onclick="redirectTo('https://mybiolink.id/dlalhafzd')">About</button>
+    <button onclick="redirectTo('https://instan.click/haf-portofolio')">Portofolio</button>
+  </div>
+</div>
+
+<script>
+  // direct url
+  function redirectTo(url) {
+    window.location.href = url;
+  }
+
+  // trigger tombol
+  document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.menu-items').classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>
